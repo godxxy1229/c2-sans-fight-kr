@@ -1,8 +1,8 @@
-# 끔찍한 시간을 보내고싶어?
+# 끔찍한 시간 시뮬레이터
 
-[**브라우저에서 플레이하기**](https://godxxy1229.github.io/c2-sans-fight-kr/)
+[**플레이하기**](https://godxxy1229.github.io/c2-sans-fight-kr/)
 
-언더테일 팬 시뮬레이터 [Bad Time Simulator](https://github.com/Jcw87/c2-sans-fight)의 한글패치입니다.
+[Bad Time Simulator](https://github.com/Jcw87/c2-sans-fight)의 한글패치입니다.
 
 ## 출처
 
