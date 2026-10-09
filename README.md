@@ -1,4 +1,4 @@
-# 샌즈전 한글판
+# 끔찍한 시간을 보내고싶어?
 
 [**브라우저에서 플레이하기**](https://godxxy1229.github.io/c2-sans-fight-kr/)
 

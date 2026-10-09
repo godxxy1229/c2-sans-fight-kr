@@ -1,7 +1,7 @@
 {
   "language": "ko",
-  "title": "배드 타임 시뮬레이터 — 샌즈전 한글판",
-  "description": "언더테일 샌즈전 팬 시뮬레이터 한글판. 방향키로 이동, Z 또는 Enter로 확인, X 또는 Shift로 취소합니다.",
+  "title": "끔찍한 시간을 보내고싶어?",
+  "description": "언더테일 샌즈전 팬 시뮬레이터. 방향키로 이동, Z 또는 Enter로 확인, X 또는 Shift로 취소합니다.",
   "player_name": "Chara",
   "buttons": {
     "UIFight": "공격",
@@ -57,7 +57,7 @@
       "sid": "8939946990053354",
       "param": 0,
       "original": "\"PRESS 'X' TO QUIT\"",
-      "ko": "X: 나가기"
+      "ko": "X를 눌러 나가기"
     },
     {
       "sheet": "Battle",

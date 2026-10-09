@@ -92,7 +92,7 @@ def run(args):
 
         home()
         check('Korean document language', page.locator('html').get_attribute('lang') == 'ko')
-        check('Korean title', '한글판' in page.title())
+        check('Korean title', page.title() == json.loads((ROOT / 'localization/ko.json').read_text(encoding='utf-8'))['title'])
         screenshot('main-menu')
 
         # Exercise keyboard navigation and the mapping from displayed labels to attack IDs.
@@ -107,7 +107,8 @@ def run(args):
         page.wait_for_function("cr_getC2Runtime().ba.name==='BattleScreen'")
         check('Single attack starts')
         page.wait_for_timeout(800)
-        screenshot('single-attack')
+        single_battle = screenshot('single-attack')
+        check('Single attack quit instruction', any(i['visible'] and i['text'] == 'X를 눌러 나가기' for i in single_battle))
         press('x')
         wait_text('일반')
         check('Single attack quit returns to menu')

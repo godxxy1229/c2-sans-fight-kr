@@ -368,7 +368,7 @@ class Build:
         index = re.sub(r'<h1>Your browser.*?</h1>', '<h1>이 브라우저는 HTML5를 지원하지 않습니다.<br>최신 Chrome, Edge 또는 Firefox로 접속해 주세요.</h1>', index, flags=re.S)
         (DIST / 'index.html').write_text(index, encoding='utf-8', newline='\n')
         manifest = read_json(DIST / 'appmanifest.json')
-        manifest.update(name=self.catalog['title'], short_name='샌즈전 한글판', lang='ko', start_url='./index.html', scope='./')
+        manifest.update(name=self.catalog['title'], short_name=self.catalog['title'], lang='ko', start_url='./index.html', scope='./')
         write_json(DIST / 'appmanifest.json', manifest)
         sw = (DIST / 'sw.js').read_text(encoding='utf-8-sig').replace('const CACHE_NAME_PREFIX = "c2offline";', 'const CACHE_NAME_PREFIX = "c2-sans-fight-kr";')
         (DIST / 'sw.js').write_text(sw, encoding='utf-8', newline='\n')
