@@ -1,0 +1,649 @@
+{
+  "language": "ko",
+  "title": "배드 타임 시뮬레이터 — 샌즈전 한글판",
+  "description": "언더테일 샌즈전 팬 시뮬레이터 한글판. 방향키로 이동, Z 또는 Enter로 확인, X 또는 Shift로 취소합니다.",
+  "player_name": "Chara",
+  "buttons": {
+    "UIFight": "공격",
+    "UIAct": "행동",
+    "UIItem": "아이템",
+    "UIMercy": "자비"
+  },
+  "csv": {
+    "sans_intro.csv": {
+      "ready?": "준비됐어?",
+      "here we go.": "시작하자."
+    }
+  },
+  "entries": [
+    {
+      "sheet": "AttackLoader",
+      "sid": "866871016798015",
+      "param": 0,
+      "original": "\"LOADING ATTACKS \" & FileIndex & \" / \" & AttackLoader.Width",
+      "ko": {
+        "concat": [
+          "공격 불러오는 중 ",
+          {
+            "ref": "fileIndex"
+          },
+          " / ",
+          {
+            "ref": "attackCount"
+          }
+        ]
+      }
+    },
+    {
+      "sheet": "AttackLoader",
+      "sid": "3276516335364258",
+      "param": 0,
+      "original": "\"LOADING ATTACKS \" & FileIndex & \" / \" & AttackLoader.Width",
+      "ko": {
+        "concat": [
+          "공격 불러오는 중 ",
+          {
+            "ref": "fileIndex"
+          },
+          " / ",
+          {
+            "ref": "attackCount"
+          }
+        ]
+      }
+    },
+    {
+      "sheet": "Battle",
+      "sid": "8939946990053354",
+      "param": 0,
+      "original": "\"PRESS 'X' TO QUIT\"",
+      "ko": "X: 나가기"
+    },
+    {
+      "sheet": "Battle",
+      "sid": "2552257414134285",
+      "param": 1,
+      "original": "\"so, uh, your browser\" & newline & \"doesn't seem to support\" & newline & \"webGL.\"",
+      "ko": "어, 네 브라우저는\nWebGL을 지원하지\n않는 것 같네.",
+      "arg": 0
+    },
+    {
+      "sheet": "Battle",
+      "sid": "9564903039530182",
+      "param": 1,
+      "original": "\"thats kind of a problem.\"",
+      "ko": "그거 좀 곤란한데.",
+      "arg": 0
+    },
+    {
+      "sheet": "Battle",
+      "sid": "6160373462858134",
+      "param": 1,
+      "original": "\"some effects aren't going\" & newline & \"to work.\"",
+      "ko": "일부 효과가\n제대로 안 보일 거야.",
+      "arg": 0
+    },
+    {
+      "sheet": "Battle",
+      "sid": "8938939640487405",
+      "param": 1,
+      "original": "\"i had to make my speech\" & newline & \"bubble inverted just so\" & newline & \"you can see what i'm\" & newline & \"saying.\"",
+      "ko": "내 말이 보이도록\n말풍선 색까지\n뒤집어야 했다고.",
+      "arg": 0
+    },
+    {
+      "sheet": "Battle",
+      "sid": "2694031369129686",
+      "param": 1,
+      "original": "\"most importantly, my blue\" & newline & \"attacks will look like\" & newline & \"normal attacks.\"",
+      "ko": "특히 파란 공격이\n보통 공격처럼\n보일 거야.",
+      "arg": 0
+    },
+    {
+      "sheet": "Battle",
+      "sid": "2552241740051866",
+      "param": 1,
+      "original": "\"continue if you dare.\"",
+      "ko": "자신 있으면 계속해 봐.",
+      "arg": 0
+    },
+    {
+      "sheet": "Battle",
+      "sid": "1463949281462211",
+      "param": 1,
+      "original": "\"huff... puff...\"",
+      "ko": "하아... 후우...",
+      "arg": 0
+    },
+    {
+      "sheet": "Battle",
+      "sid": "522788098430892",
+      "param": 1,
+      "original": "\"alright, i guess\" & newline & \"you win.\"",
+      "ko": "좋아, 아무래도\n네가 이긴 것 같네.",
+      "arg": 0
+    },
+    {
+      "sheet": "Battle",
+      "sid": "4925109422702469",
+      "param": 1,
+      "original": "\"* You felt your sins crawling\" & newline & \"  on your back.\"",
+      "ko": "* 당신은 죄악이 등을 타고\n  오르는 것을 느꼈다."
+    },
+    {
+      "sheet": "Battle",
+      "sid": "759843657247084",
+      "param": 1,
+      "original": "\"* You felt your sins weighing\" & newline & \"  on your neck.\"",
+      "ko": "* 당신은 죄악이 목을\n  짓누르는 것을 느꼈다."
+    },
+    {
+      "sheet": "Battle",
+      "sid": "708135348105202",
+      "param": 1,
+      "original": "\"* KARMA coursing through your\" & newline & \"  veins.\"",
+      "ko": "* 업보가 혈관을 타고 흐른다."
+    },
+    {
+      "sheet": "Battle",
+      "sid": "5244377573294855",
+      "param": 1,
+      "original": "\"* You feel like you're going to\" & newline & \"  have a bad time.\"",
+      "ko": "* 끔찍한 시간을 보내게\n  될 것 같다."
+    },
+    {
+      "sheet": "Battle",
+      "sid": "2670032810893258",
+      "param": 1,
+      "original": "\"* Sans is taking a break.\"",
+      "ko": "* 샌즈가 쉬고 있다."
+    },
+    {
+      "sheet": "Battle",
+      "sid": "3736070576317147",
+      "param": 1,
+      "original": "\"* The REAL battle finally begins.\"",
+      "ko": "* 이제 진짜 전투가 시작된다."
+    },
+    {
+      "sheet": "Battle",
+      "sid": "6589808686267995",
+      "param": 1,
+      "original": "\"* Reading this doesn't seem\" & newline & \"  like the best use of time.\"",
+      "ko": "* 이런 걸 읽으며 시간을\n  보낼 때가 아닌 것 같다."
+    },
+    {
+      "sheet": "Battle",
+      "sid": "5769331507923777",
+      "param": 1,
+      "original": "\"* Sans is starting to look\" & newline & \"  really tired.\"",
+      "ko": "* 샌즈가 무척 지쳐 보인다."
+    },
+    {
+      "sheet": "Battle",
+      "sid": "6593676851472784",
+      "param": 1,
+      "original": "\"* Sans is preparing something.\"",
+      "ko": "* 샌즈가 무언가 준비하고 있다."
+    },
+    {
+      "sheet": "Battle",
+      "sid": "9963026487239779",
+      "param": 1,
+      "original": "\"* Sans is getting ready to\" & newline & \"  use his special attack.\"",
+      "ko": "* 샌즈가 특수 공격을\n  사용할 준비를 한다."
+    },
+    {
+      "sheet": "Battle",
+      "sid": "8302002307835332",
+      "param": 1,
+      "original": "\"* SANS 1 ATK 1 DEF\" & newline & \"* The easiest enemy.\" & newline & \"* Can only deal 1 damage.\"",
+      "ko": "* 샌즈  1 ATK  1 DEF\n* 가장 쉬운 적.\n* 1 대미지만 줄 수 있다."
+    },
+    {
+      "sheet": "Battle",
+      "sid": "7697488528991464",
+      "param": 1,
+      "original": "\"* Can't keep dodging forever.\" & newline & \"* Keep attacking.\"",
+      "ko": "* 영원히 피할 수는 없다.\n* 계속 공격하자."
+    },
+    {
+      "sheet": "Battle",
+      "sid": "818540111613540",
+      "param": 1,
+      "original": "\"* Sans\"",
+      "ko": "* 샌즈",
+      "arg": 4
+    },
+    {
+      "sheet": "Battle",
+      "sid": "250405060356076",
+      "param": 1,
+      "original": "\"* Check\"",
+      "ko": "* 살펴보기",
+      "arg": 4
+    },
+    {
+      "sheet": "Battle",
+      "sid": "986631449476559",
+      "param": 1,
+      "original": "\"* Spare\"",
+      "ko": "* 살려주기",
+      "arg": 4
+    },
+    {
+      "sheet": "Battle",
+      "sid": "8054308759858593",
+      "param": 0,
+      "original": "\"MISS\"",
+      "ko": "빗나감"
+    },
+    {
+      "sheet": "Battle",
+      "sid": "7042778576973567",
+      "param": 0,
+      "original": "\"MISS\"",
+      "ko": "빗나감"
+    },
+    {
+      "sheet": "Battle",
+      "sid": "5738766536258974",
+      "param": 0,
+      "original": "\"MISS\"",
+      "ko": "빗나감"
+    },
+    {
+      "sheet": "Battle",
+      "sid": "134424053483791",
+      "param": 0,
+      "original": "\"SUCCESS\"",
+      "ko": "성공"
+    },
+    {
+      "sheet": "Battle",
+      "sid": "664980966081108",
+      "param": 0,
+      "original": "\"FAILURE\"",
+      "ko": "실패"
+    },
+    {
+      "sheet": "Battle",
+      "sid": "8274116410221162",
+      "param": 0,
+      "original": "\"PAGE 1\"",
+      "ko": "1쪽"
+    },
+    {
+      "sheet": "Battle",
+      "sid": "3088408406826475",
+      "param": 0,
+      "original": "\"PAGE \" & (floor(MenuStack.Back/4) + 1)",
+      "ko": {
+        "concat": [
+          {
+            "ref": "page"
+          },
+          "쪽"
+        ]
+      }
+    },
+    {
+      "sheet": "Battle",
+      "sid": "8525105579362746",
+      "param": 1,
+      "original": "\"* You eat the \" & ItemDB.At(ItemID, 2) & \".\" &  newline & \"* You recovered \" & ItemDB.At(ItemID, 1) & \" HP!\"",
+      "ko": {
+        "concat": [
+          {
+            "select": {
+              "ref": "itemId",
+              "choices": {
+                "0": "* 버터스카치 파이를 먹었다.",
+                "1": "* 컵라면을 먹었다.",
+                "2": "* 얼굴 스테이크를 먹었다.",
+                "3": "* 전설의 히어로를 먹었다."
+              },
+              "fallback": "* 아이템을 사용했다."
+            }
+          },
+          "\n* HP를 ",
+          {
+            "ref": "heal"
+          },
+          " 회복했다!"
+        ]
+      }
+    },
+    {
+      "sheet": "InputManagement",
+      "sid": "989636852540768",
+      "param": 0,
+      "original": "\"Don't play on mobile!\" & newline & \"You have been warned!\"",
+      "ko": "PC에서 플레이해 주세요!\n모바일 조작은 어렵습니다!"
+    },
+    {
+      "sheet": "MainMenu",
+      "sid": "997228410907339",
+      "param": 0,
+      "original": "\"UPDATE TEXT\"",
+      "ko": "업데이트 안내"
+    },
+    {
+      "sheet": "MainMenu",
+      "sid": "234881402244069",
+      "param": 0,
+      "original": "\"UPDATE AVAILABLE.\" & newline & \"DOWNLOADING...\"",
+      "ko": "새 버전이 있습니다.\n내려받는 중..."
+    },
+    {
+      "sheet": "MainMenu",
+      "sid": "773819482594290",
+      "param": 0,
+      "original": "\"UPDATE AVAILABLE.\" & newline & \"PLEASE REFRESH THE PAGE.\"",
+      "ko": "새 버전이 준비됐습니다.\n페이지를 새로고침해 주세요."
+    },
+    {
+      "sheet": "MainMenu",
+      "sid": "6017732506802038",
+      "param": 0,
+      "original": "\"Select your bad time\"",
+      "ko": "어떤 끔찍한 시간을 보낼까?"
+    },
+    {
+      "sheet": "MainMenu",
+      "sid": "4129082167688271",
+      "param": 0,
+      "original": "\"Choose an attack\"",
+      "ko": "공격을 선택하세요"
+    },
+    {
+      "sheet": "MainMenu",
+      "sid": "63601467630781",
+      "param": 0,
+      "original": "\"Custom attack\"",
+      "ko": "사용자 지정 공격"
+    },
+    {
+      "sheet": "MainMenu",
+      "sid": "1740537707642743",
+      "param": 0,
+      "original": "\"CUSTOM ATTACK LOADED\"",
+      "ko": "사용자 지정 공격 불러오기 완료"
+    },
+    {
+      "sheet": "MainMenu",
+      "sid": "121948490218354",
+      "param": 1,
+      "original": "\"Normal\"",
+      "ko": "일반",
+      "arg": 4
+    },
+    {
+      "sheet": "MainMenu",
+      "sid": "574106720171711",
+      "param": 1,
+      "original": "\"Practice\"",
+      "ko": "연습",
+      "arg": 4
+    },
+    {
+      "sheet": "MainMenu",
+      "sid": "304790185942551",
+      "param": 1,
+      "original": "\"Endless\"",
+      "ko": "무한",
+      "arg": 4
+    },
+    {
+      "sheet": "MainMenu",
+      "sid": "326311762535984",
+      "param": 1,
+      "original": "\"Single attack\"",
+      "ko": "공격 선택",
+      "arg": 4
+    },
+    {
+      "sheet": "MainMenu",
+      "sid": "516406951993025",
+      "param": 1,
+      "original": "\"Custom attack\"",
+      "ko": "사용자 지정 공격",
+      "arg": 4
+    },
+    {
+      "sheet": "MainMenu",
+      "sid": "131065348070977",
+      "param": 1,
+      "original": "\"Documentation\"",
+      "ko": "제작 안내",
+      "arg": 4
+    },
+    {
+      "sheet": "MainMenu",
+      "sid": "363254892081796",
+      "param": 1,
+      "original": "\"Load file\"",
+      "ko": "파일 불러오기",
+      "arg": 4
+    },
+    {
+      "sheet": "MainMenu",
+      "sid": "133977934621254",
+      "param": 1,
+      "original": "\"Run attack\"",
+      "ko": "공격 실행",
+      "arg": 4
+    },
+    {
+      "sheet": "MainMenu",
+      "sid": "158277619791938",
+      "param": 1,
+      "original": "\"Phase \" & (loopindex + 1)",
+      "ko": {
+        "concat": [
+          {
+            "ref": "stage"
+          },
+          "단계"
+        ]
+      },
+      "arg": 4
+    },
+    {
+      "sheet": "MainMenu",
+      "sid": "307989349234234",
+      "param": 1,
+      "original": "AttackLoader.At(loopindex)",
+      "ko": {
+        "select": {
+          "ref": "attack",
+          "choices": {
+            "sans_bluebone": "파란 뼈",
+            "sans_bonegap1": "뼈 사이로 1",
+            "sans_bonegap1fast": "뼈 사이로 1 / 고속",
+            "sans_bonegap2": "뼈 사이로 2",
+            "sans_boneslideh": "가로 뼈",
+            "sans_boneslidev": "세로 뼈",
+            "sans_bonestab1": "솟는 뼈 1",
+            "sans_bonestab2": "솟는 뼈 2",
+            "sans_bonestab3": "솟는 뼈 3",
+            "sans_final": "마지막 공격",
+            "sans_intro": "첫 공격",
+            "sans_multi1": "복합 공격 1",
+            "sans_multi2": "복합 공격 2",
+            "sans_multi3": "복합 공격 3",
+            "sans_platformblaster": "발판과 블래스터",
+            "sans_platformblasterfast": "발판과 블래스터 / 고속",
+            "sans_platforms1": "발판 1",
+            "sans_platforms2": "발판 2",
+            "sans_platforms3": "발판 3",
+            "sans_platforms4": "발판 4",
+            "sans_platforms4hard": "발판 4 / 어려움",
+            "sans_randomblaster1": "무작위 블래스터 1",
+            "sans_randomblaster2": "무작위 블래스터 2",
+            "sans_spare": "자비"
+          },
+          "fallback": {
+            "ref": "attack"
+          }
+        }
+      },
+      "arg": 4
+    },
+    {
+      "sheet": "Items",
+      "sid": "3943517466350452",
+      "param": 1,
+      "original": "\"Butterscotch Pie\"",
+      "ko": "버터스카치 파이",
+      "arg": 2
+    },
+    {
+      "sheet": "Items",
+      "sid": "3943517466350452",
+      "param": 1,
+      "original": "\"Pie\"",
+      "ko": "파이",
+      "arg": 3
+    },
+    {
+      "sheet": "Items",
+      "sid": "2866502868054797",
+      "param": 1,
+      "original": "\"Instant Noodles\"",
+      "ko": "컵라면",
+      "arg": 2
+    },
+    {
+      "sheet": "Items",
+      "sid": "2866502868054797",
+      "param": 1,
+      "original": "\"I.Noodles\"",
+      "ko": "컵라면",
+      "arg": 3
+    },
+    {
+      "sheet": "Items",
+      "sid": "2972695806626813",
+      "param": 1,
+      "original": "\"Face Steak\"",
+      "ko": "얼굴 스테이크",
+      "arg": 2
+    },
+    {
+      "sheet": "Items",
+      "sid": "2972695806626813",
+      "param": 1,
+      "original": "\"Steak\"",
+      "ko": "스테이크",
+      "arg": 3
+    },
+    {
+      "sheet": "Items",
+      "sid": "8628336839377844",
+      "param": 1,
+      "original": "\"Legendary Hero\"",
+      "ko": "전설의 히어로",
+      "arg": 2
+    },
+    {
+      "sheet": "Items",
+      "sid": "8628336839377844",
+      "param": 1,
+      "original": "\"L. Hero\"",
+      "ko": "전설의 히어로",
+      "arg": 3
+    },
+    {
+      "sheet": "Timeline",
+      "sid": "2179763921201474",
+      "param": 1,
+      "arg": 0,
+      "original": "\"Infinite loop detected line \" & Line",
+      "ko": {
+        "concat": [
+          {
+            "ref": "line"
+          },
+          "행: 무한 반복 감지"
+        ]
+      }
+    },
+    {
+      "sheet": "Timeline",
+      "sid": "472332076284352",
+      "param": 1,
+      "arg": 0,
+      "original": "\"Label \" & Function.Param(0) & \" does not exist line \" & Line",
+      "ko": {
+        "concat": [
+          {
+            "ref": "line"
+          },
+          "행: 라벨 없음 - ",
+          {
+            "ref": "label"
+          }
+        ]
+      }
+    }
+  ],
+  "button_crops": {
+    "UIFight": {
+      "Default": [
+        902,
+        826,
+        110,
+        42
+      ],
+      "Highlight": [
+        310,
+        846,
+        110,
+        42
+      ]
+    },
+    "UIAct": {
+      "Default": [
+        234,
+        942,
+        110,
+        42
+      ],
+      "Highlight": [
+        350,
+        1018,
+        110,
+        42
+      ]
+    },
+    "UIItem": {
+      "Default": [
+        698,
+        1018,
+        110,
+        42
+      ],
+      "Highlight": [
+        814,
+        1018,
+        110,
+        42
+      ]
+    },
+    "UIMercy": {
+      "Default": [
+        2,
+        894,
+        110,
+        42
+      ],
+      "Highlight": [
+        118,
+        898,
+        110,
+        42
+      ]
+    }
+  }
+}

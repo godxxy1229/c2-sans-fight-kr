@@ -1,0 +1,4 @@
+* text=auto eol=lf
+# Checksum-locked inputs must retain their exact original bytes on every OS.
+upstream/** -text
+reference/** -text

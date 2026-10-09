@@ -1,0 +1,7 @@
+/dist/
+/source/
+/.work/
+__pycache__/
+*.pyc
+/test-results/
+/.venv/
