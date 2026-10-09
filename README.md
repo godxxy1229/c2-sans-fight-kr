@@ -55,6 +55,8 @@ macOS/Linux에서는 위 명령의 `.\.venv\Scripts\python.exe` 대신 `.venv/bi
 
 `localization/ko.json`이 번역의 기준입니다. 각 항목은 이벤트 SID, 매개변수 위치, 예상 원문과 한국어 문구를 기록합니다. 동적 문장은 `concat`·`ref`·`select`로 구성하며 생성기가 소스 표현식과 웹 실행 표현식을 함께 만듭니다. 공격 목록은 표시명만 번역하고 `sans_*` ID는 유지합니다.
 
+원작에 대응하는 대사와 전투 설명은 팀 왈도 참고 한글패치의 문장을 우선합니다. 글자 사이 공백과 GameMaker 제어 코드를 제거하고 화면에 맞게 줄바꿈을 조정합니다. 해당 문장의 `reference_key`는 참조 프로젝트 `codes/gml_Script_textdata_en.gml`의 항목 키입니다. `그럼 간다.`는 `obj_sansb_body_1455`를 따릅니다. 시뮬레이터 고유 안내와 공격 목록은 용도에 맞게 별도로 번역합니다.
+
 `scripts/build.py`는 다음을 수행합니다.
 
 1. `upstream.lock.json`의 SHA-256으로 모든 원본 입력 확인.

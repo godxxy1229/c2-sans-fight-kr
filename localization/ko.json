@@ -12,7 +12,7 @@
   "csv": {
     "sans_intro.csv": {
       "ready?": "준비됐어?",
-      "here we go.": "시작하자."
+      "here we go.": "그럼 간다."
     }
   },
   "entries": [
@@ -23,7 +23,7 @@
       "original": "\"LOADING ATTACKS \" & FileIndex & \" / \" & AttackLoader.Width",
       "ko": {
         "concat": [
-          "공격 불러오는 중 ",
+          "공격 데이터를 불러오는 중 ",
           {
             "ref": "fileIndex"
           },
@@ -41,7 +41,7 @@
       "original": "\"LOADING ATTACKS \" & FileIndex & \" / \" & AttackLoader.Width",
       "ko": {
         "concat": [
-          "공격 불러오는 중 ",
+          "공격 데이터를 불러오는 중 ",
           {
             "ref": "fileIndex"
           },
@@ -112,8 +112,9 @@
       "sid": "1463949281462211",
       "param": 1,
       "original": "\"huff... puff...\"",
-      "ko": "하아... 후우...",
-      "arg": 0
+      "ko": "헉... 헉...",
+      "arg": 0,
+      "reference_key": "obj_sansb_body_2091"
     },
     {
       "sheet": "Battle",
@@ -135,21 +136,24 @@
       "sid": "759843657247084",
       "param": 1,
       "original": "\"* You felt your sins weighing\" & newline & \"  on your neck.\"",
-      "ko": "* 당신은 죄악이 목을\n  짓누르는 것을 느꼈다."
+      "ko": "* 당신은 죄악이 목을 짓누르는\n  걸 느꼈다.",
+      "reference_key": "obj_sansb_963"
     },
     {
       "sheet": "Battle",
       "sid": "708135348105202",
       "param": 1,
       "original": "\"* KARMA coursing through your\" & newline & \"  veins.\"",
-      "ko": "* 업보가 혈관을 타고 흐른다."
+      "ko": "* 업보가 당신의\n  혈관을 따라 흐른다.",
+      "reference_key": "obj_sansb_964"
     },
     {
       "sheet": "Battle",
       "sid": "5244377573294855",
       "param": 1,
       "original": "\"* You feel like you're going to\" & newline & \"  have a bad time.\"",
-      "ko": "* 끔찍한 시간을 보내게\n  될 것 같다."
+      "ko": "* 당신은 끔찍한 시간을\n  보내게 될 것 같은\n  기분이 든다.",
+      "reference_key": "obj_sansb_body_1468"
     },
     {
       "sheet": "Battle",
@@ -163,35 +167,40 @@
       "sid": "3736070576317147",
       "param": 1,
       "original": "\"* The REAL battle finally begins.\"",
-      "ko": "* 이제 진짜 전투가 시작된다."
+      "ko": "* 진짜 전투가\n  드디어 시작된다.",
+      "reference_key": "obj_sansb_969"
     },
     {
       "sheet": "Battle",
       "sid": "6589808686267995",
       "param": 1,
       "original": "\"* Reading this doesn't seem\" & newline & \"  like the best use of time.\"",
-      "ko": "* 이런 걸 읽으며 시간을\n  보낼 때가 아닌 것 같다."
+      "ko": "* 이걸 읽는 것도\n  시간 낭비인 것 같다.",
+      "reference_key": "obj_sansb_971"
     },
     {
       "sheet": "Battle",
       "sid": "5769331507923777",
       "param": 1,
       "original": "\"* Sans is starting to look\" & newline & \"  really tired.\"",
-      "ko": "* 샌즈가 무척 지쳐 보인다."
+      "ko": "* 샌즈는 정말 피곤한 기색을\n  보이기 시작했다.",
+      "reference_key": "obj_sansb_973"
     },
     {
       "sheet": "Battle",
       "sid": "6593676851472784",
       "param": 1,
       "original": "\"* Sans is preparing something.\"",
-      "ko": "* 샌즈가 무언가 준비하고 있다."
+      "ko": "* 샌즈는 뭔가 준비하고 있다.",
+      "reference_key": "obj_sansb_975"
     },
     {
       "sheet": "Battle",
       "sid": "9963026487239779",
       "param": 1,
       "original": "\"* Sans is getting ready to\" & newline & \"  use his special attack.\"",
-      "ko": "* 샌즈가 특수 공격을\n  사용할 준비를 한다."
+      "ko": "* 샌즈는 필살기를 사용할\n  준비를 하고 있다.",
+      "reference_key": "obj_sansb_977"
     },
     {
       "sheet": "Battle",
@@ -306,13 +315,14 @@
               "fallback": "* 아이템을 사용했다."
             }
           },
-          "\n* HP를 ",
+          "\n* 당신은 ",
           {
             "ref": "heal"
           },
-          " 회복했다!"
+          " HP를 회복했다!"
         ]
-      }
+      },
+      "reference_key": "recover_hp"
     },
     {
       "sheet": "InputManagement",
@@ -368,7 +378,7 @@
       "sid": "1740537707642743",
       "param": 0,
       "original": "\"CUSTOM ATTACK LOADED\"",
-      "ko": "사용자 지정 공격 불러오기 완료"
+      "ko": "공격 파일을 불러왔습니다."
     },
     {
       "sheet": "MainMenu",
@@ -459,26 +469,26 @@
           "ref": "attack",
           "choices": {
             "sans_bluebone": "파란 뼈",
-            "sans_bonegap1": "뼈 사이로 1",
-            "sans_bonegap1fast": "뼈 사이로 1 / 고속",
-            "sans_bonegap2": "뼈 사이로 2",
-            "sans_boneslideh": "가로 뼈",
-            "sans_boneslidev": "세로 뼈",
-            "sans_bonestab1": "솟는 뼈 1",
-            "sans_bonestab2": "솟는 뼈 2",
-            "sans_bonestab3": "솟는 뼈 3",
+            "sans_bonegap1": "뼈 틈새 1",
+            "sans_bonegap1fast": "뼈 틈새 1 (빠름)",
+            "sans_bonegap2": "뼈 틈새 2",
+            "sans_boneslideh": "가로로 이동하는 뼈",
+            "sans_boneslidev": "세로로 이동하는 뼈",
+            "sans_bonestab1": "튀어나오는 뼈 1",
+            "sans_bonestab2": "튀어나오는 뼈 2",
+            "sans_bonestab3": "튀어나오는 뼈 3",
             "sans_final": "마지막 공격",
             "sans_intro": "첫 공격",
             "sans_multi1": "복합 공격 1",
             "sans_multi2": "복합 공격 2",
             "sans_multi3": "복합 공격 3",
             "sans_platformblaster": "발판과 블래스터",
-            "sans_platformblasterfast": "발판과 블래스터 / 고속",
+            "sans_platformblasterfast": "발판과 블래스터 (빠름)",
             "sans_platforms1": "발판 1",
             "sans_platforms2": "발판 2",
             "sans_platforms3": "발판 3",
             "sans_platforms4": "발판 4",
-            "sans_platforms4hard": "발판 4 / 어려움",
+            "sans_platforms4hard": "발판 4 (어려움)",
             "sans_randomblaster1": "무작위 블래스터 1",
             "sans_randomblaster2": "무작위 블래스터 2",
             "sans_spare": "자비"

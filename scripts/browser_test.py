@@ -1,5 +1,6 @@
 """Browser integration checks. Test hooks stay in the browser test, never the site."""
 import argparse
+import csv
 import json
 import sys
 from pathlib import Path
@@ -148,7 +149,7 @@ def run(args):
         screenshot('custom-menu')
         call('MenuCustomSelect')
         page.locator('input[type=file]').set_input_files(str(ROOT / 'upstream/web/sans_bluebone.csv'))
-        wait_text('불러오기 완료')
+        wait_text('공격 파일을 불러왔습니다.')
         screenshot('custom-loaded')
         call('MenuCustomRun')
         page.wait_for_function("cr_getC2Runtime().ba.name==='BattleScreen'")
@@ -164,7 +165,7 @@ def run(args):
             page.locator('input[type=file]').set_input_files({
                 'name': name + '.csv', 'mimeType': 'text/csv', 'buffer': csv_text.encode(),
             })
-            wait_text('불러오기 완료')
+            wait_text('공격 파일을 불러왔습니다.')
             call('MenuCustomRun')
             wait_text(expected)
             screenshot('error-' + name)
@@ -186,6 +187,38 @@ def run(args):
         wait_text('1 대미지만 줄 수 있다.')
         screenshot('check-sans')
         check('ACT and typewriter skip work')
+
+        # Reach late battle information through the original end-of-attack selector.
+        # Only the test profile changes the current battle stage to avoid a full playthrough.
+        for stage, next_attack, expected, name in [
+            (0, 1, '기분이 든다.', 'bad-time'),
+            (15, 0, '드디어 시작된다.', 'real-battle'),
+            (19, 0, '시간 낭비인 것 같다.', 'reading'),
+            (20, 0, '보이기 시작했다.', 'tired'),
+            (21, 0, '뭔가 준비하고 있다.', 'preparing'),
+            (22, 0, '필살기를 사용할', 'special-attack'),
+        ]:
+            start_normal()
+            battle_menu()
+            page.evaluate('([stage,next])=>{const s=cr_getC2Runtime().p[25].d[0];s.hb[1]=stage;s.hb[0]=next}', [stage, next_attack])
+            battle_menu()
+            wait_text(expected, full=True)
+            press('x')
+            page.wait_for_function("expected=>cr_getC2Runtime().p[49].d.some(i=>i.hb[2].includes(expected)&&i.text===i.hb[2])", arg=expected)
+            screenshot('reference-' + name)
+        check('Reference battle descriptions fit their display area')
+
+        # Render the localized line from the shipped attack CSV through the existing bubble.
+        start_normal()
+        call('TLPause')
+        with (ROOT / 'source/Files/sans_intro.csv').open(encoding='utf-8', newline='') as f:
+            intro_lines = [row[2] for row in csv.reader(f) if len(row) > 2 and row[1] == 'SansText']
+        call('SansText', intro_lines[-1])
+        wait_text('그럼 간다.', full=True)
+        press('x')
+        wait_text('그럼 간다.')
+        screenshot('intro-here-we-go')
+        check('Reference intro dialogue displays from attack CSV')
 
         start_normal()
         battle_menu()
@@ -251,10 +284,15 @@ def run(args):
         wait_text('준비됐어?', full=True)
         check('Game restarts after death')
 
-        # Check the existing victory dialogue chain without playing every attack.
+        # Check the existing breath/victory dialogue chain without playing every attack.
         start_normal()
+        page.evaluate('cr_getC2Runtime().p[25].d[0].hb[1]=23')
         battle_menu()
-        call('Win1')
+        wait_text('헉... 헉...', full=True)
+        press('x')
+        wait_text('헉... 헉...')
+        screenshot('victory-breath')
+        press('z')
         wait_text('네가 이긴 것 같네.', full=True)
         press('x')
         screenshot('victory')
